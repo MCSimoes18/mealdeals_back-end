@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :restaurants, :offers, :coupon_users, :users
       get '/yelp', to: 'yelp#fetch'
-      get '/search', to: 'yelp#search'
       post '/search', to: 'yelp#search'
     end
   end

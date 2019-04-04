@@ -8,24 +8,22 @@ class Api::V1::YelpController < ApplicationController
   #   render json: @restaurants
   # end
 
-  def fetch(body)
+  def fetch
   rest_name = params[:_json]
-  searchTerm = params[:searchTerm]
   response = RestClient::Request.execute(
     method: :get,
-    url: "https://api.yelp.com/v3/businesses/search?term=#{rest_name}&location=#{body}",
+    url: "https://api.yelp.com/v3/businesses/search?term=#{rest_name}&location=charlotte",
     headers: {Authorization: "Bearer 8ESWJF5yfJ2HIjpxhoXJVnZ9CuXnQHtLMIlSgVwsGu1-Sr5VWaDhSThfTM6riZ-HbnTY_xjp8vbPk7wKEgwlSrpmTMFjzrwV9jy1X0CjQzzd-8AYhAbqfTcYasmgXHYx"}
   )
     results = JSON.parse(response)
     render json: results
 end
 
-def search(body)
+def search
 rest_name = params[:_json]
-body = params[:body]
 response = RestClient::Request.execute(
-  method: :post,
-  url: "https://api.yelp.com/v3/businesses/search?term=#{rest_name}&location=#{body}",
+  method: "GET",
+  url: "https://api.yelp.com/v3/businesses/search?location=#{rest_name}",
   headers: {Authorization: "Bearer 8ESWJF5yfJ2HIjpxhoXJVnZ9CuXnQHtLMIlSgVwsGu1-Sr5VWaDhSThfTM6riZ-HbnTY_xjp8vbPk7wKEgwlSrpmTMFjzrwV9jy1X0CjQzzd-8AYhAbqfTcYasmgXHYx"}
 )
   results = JSON.parse(response)
