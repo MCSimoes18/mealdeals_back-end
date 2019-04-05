@@ -14,7 +14,27 @@ class Api::V1::RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.permit(:name)
+    params.permit(
+    :username,
+    :password,
+    :name,
+    :alias,
+    :yelp_id,
+    :image_url,
+    :url,
+    :display_phone,
+    :phone,
+    :price,
+    :rating,
+    :review_count,
+    :address1,
+    :address2,
+    :address3,
+    :city,
+    :zip_code,
+    :latitude,
+    :longitude
+    )
   end
 
 end

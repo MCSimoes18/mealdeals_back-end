@@ -34,13 +34,25 @@ ActiveRecord::Schema.define(version: 2019_04_03_183309) do
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
     t.string "name"
+    t.string "alias"
+    t.string "yelp_id"
     t.string "image_url"
     t.string "url"
-    t.integer "review_count"
+    t.string "display_phone"
+    t.string "phone"
+    t.string "price"
     t.integer "rating"
-    t.string "categories"
-    t.float "location"
+    t.integer "review_count"
+    t.string "address1"
+    t.string "address2"
+    t.string "address3"
+    t.string "city"
+    t.string "zip_code"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
