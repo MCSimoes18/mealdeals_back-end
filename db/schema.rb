@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2019_04_03_183309) do
   create_table "offers", force: :cascade do |t|
     t.integer "restaurant_id"
     t.string "offer"
-    t.string "earn_month"
-    t.string "redeem_month"
+    t.integer "earn_month"
+    t.integer "redeem_month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
