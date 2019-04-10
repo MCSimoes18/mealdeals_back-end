@@ -8,6 +8,18 @@ Rails.application.routes.draw do
       resources :restaurants, :offers, :coupon_users, :users
       get '/yelp', to: 'yelp#fetch'
       post '/search', to: 'yelp#search'
+
+      # route to login
+      post "/login", to: "auth#login"
+
+      # login on refresh
+      get '/auto_login', to: "auth#auto_login"
+
+      # route to login
+      post "/rest_login", to: "auth#rest_login"
+
+      # login on refresh
+      get '/rest_auto_login', to: "auth#rest_auto_login"
     end
   end
 end
