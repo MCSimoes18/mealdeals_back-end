@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :restaurants, :offers, :coupon_users, :users
       get '/yelp', to: 'yelp#fetch'
       post '/search', to: 'yelp#search'
+      get '/send', to: 'send#fetch'
+      post '/text', to: 'send#text'
 
       # route to login
       post "/login", to: "auth#login"

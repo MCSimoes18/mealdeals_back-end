@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_04_03_183309) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.integer "phone"
+    t.string "phone"
     t.float "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
