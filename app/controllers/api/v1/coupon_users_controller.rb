@@ -7,7 +7,7 @@ class Api::V1::CouponUsersController < ApplicationController
 
     def create
       @coupon_user = CouponUser.create(coupon_params)
-      render json: @offer
+      render json: @coupon_user
     end
 
     def show
@@ -18,7 +18,7 @@ class Api::V1::CouponUsersController < ApplicationController
     def update
       @coupon_user = CouponUser.find(params[:id])
       @coupon_user.update(coupon_params)
-      render json: @coupon
+      render json: @coupon_user
     end
 
     private
