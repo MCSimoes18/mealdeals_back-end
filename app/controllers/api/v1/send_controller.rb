@@ -11,9 +11,9 @@ class Api::V1::SendController < ApplicationController
     rest = params[:rest]
     date = params[:date]
 
-    twilio_sid = 'AC046c4a5d85f3c317cceb88c945cd55bc'
-    twilio_token = 'c79a0324df737f691113b254b42a4742'
-    twilio_phone_number = '6314434561'
+    twilio_sid = TWILIO_SID
+    twilio_token = TWILIO_TOKEN
+    twilio_phone_number = TWILIO_PHONE
 
     @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
 
